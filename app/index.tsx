@@ -73,7 +73,14 @@
 //   },
 // });
 
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Pressable,
+} from "react-native";
+import { Link } from "expo-router";
 
 import icedCoffeImg from "@/assets/images/iced-coffee.png";
 
@@ -85,7 +92,19 @@ const app = () => {
         source={icedCoffeImg}
         resizeMode="cover"
       >
-        <Text style={styles.text}>Coffe Shop</Text>
+        <Text style={styles.title}>Coffe Shop</Text>
+
+        {/* Use Default Way */}
+        {/* <Link style={styles.link} href="/explore">
+          Explore
+        </Link> */}
+
+        {/* Transfer Link into Button */}
+        <Link style={{ marginHorizontal: "auto" }} href="/contact" asChild>
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Contact Us</Text>
+          </Pressable>
+        </Link>
       </ImageBackground>
     </View>
   );
@@ -105,11 +124,35 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     resizeMode: "cover",
   },
-  text: {
+  title: {
     color: "white",
     fontSize: 42,
     fontWeight: "bold",
     textAlign: "center",
     backgroundColor: "rgba(0,0,0,0.5)",
+    marginBottom: 120,
+  },
+  link: {
+    color: "white",
+    fontSize: 42,
+    fontWeight: "bold",
+    textAlign: "center",
+    textDecorationLine: "underline",
+    backgroundColor: "rgba(0,0,0,0.5)",
+    padding: 4,
+  },
+  button: {
+    height: 60,
+    borderRadius: 20,
+    justifyContent: "center",
+    backgroundColor: "rgba(0,0,0,0.75)",
+    padding: 6,
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+    padding: 4,
   },
 });

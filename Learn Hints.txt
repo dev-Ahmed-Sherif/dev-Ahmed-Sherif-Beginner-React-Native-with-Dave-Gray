@@ -1,1 +1,4 @@
 1. If you add x in begin of file it not apply in app (x_layout.tsx)
+2. Stack used as tabs container in main layout.tsx
+3. Every Folder contains () must has layout.tsx ex (coffee)
+4. Slot allow to pass childrens in layout
