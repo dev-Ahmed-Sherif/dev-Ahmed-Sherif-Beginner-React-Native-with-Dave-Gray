@@ -2,3 +2,5 @@
 2. Stack used as tabs container in main layout.tsx
 3. Every Folder contains () must has layout.tsx ex (coffee)
 4. Slot allow to pass childrens in layout
+5. splash in app.json control the app start loading state 
+6. https://icons.expo.fyi expo for design app icons
